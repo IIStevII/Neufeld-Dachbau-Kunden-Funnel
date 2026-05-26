@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kostenloses Dachgutachten – Neufeld Dachbau Euskirchen</title>
+  <meta name="description" content="Jetzt kostenloses Angebot anfordern – Neufeld Dachbau aus Euskirchen. Neubau, Sanierung, Reparatur & Velux-Fenster." />
+
+  <!-- ═══════════════════════════════════════════════════════
+       SUPABASE-KONFIGURATION — hier eure Werte eintragen!
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    const SUPABASE_URL    = 'https://roubfdarhrtaozaecopq.supabase.co';
+    const SUPABASE_ANON   = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvdWJmZGFyaHJ0YW96YWVjb3BxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MjEwNTMsImV4cCI6MjA5NTM5NzA1M30.9AdprA3wxuWwWb-E4H2k-v1MhdPJlRA8chBPSj_RfvY';
+    const WHATSAPP_NUMBER = '4915110608146';
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #C0392B;
+      --red-dk: #96281B;
+      --dark:   #1C1C1C;
+      --anth:   #2E2E2E;
+      --mid:    #555;
+      --light:  #F4F4F4;
+      --white:  #FFFFFF;
+      --green:  #27AE60;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .logo-text { color: var(--white); }
+    .logo-text strong { display: block; font-size: 18px; letter-spacing: .5px; }
+    .logo-text span { font-size: 12px; color: #aaa; }
+    .header-badge {
+      background: var(--red);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--anth) 0%, var(--dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 48px 24px 56px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 5vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero p {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: #ccc;
+      max-width: 560px;
+      margin: 0 auto 24px;
+    }
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #bbb;
+    }
+    .trust-row span { display: flex; align-items: center; gap: 6px; }
+    .trust-row .dot { color: var(--green); font-size: 18px; }
+
+    /* ── CARD ── */
+    .card-wrap {
+      max-width: 680px;
+      margin: -32px auto 0;
+      padding: 0 16px 60px;
+    }
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0,0,0,.12);
+      overflow: hidden;
+    }
+
+    /* ── PROGRESS ── */
+    .progress-bar-wrap {
+      background: var(--light);
+      height: 6px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--red);
+      transition: width .4s ease;
+    }
+    .progress-label {
+      padding: 14px 24px 0;
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    /* ── STEP ── */
+    .step { display: none; padding: 24px 28px 32px; }
+    .step.active { display: block; }
+
+    .step h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+    .step .sub {
+      font-size: 14px;
+      color: var(--mid);
+      margin-bottom: 22px;
+    }
+
+    /* ── OPTION GRID ── */
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .option-btn {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px 16px 16px;
+      cursor: pointer;
+      text-align: center;
+      background: white;
+      transition: all .2s;
+      user-select: none;
+    }
+    .option-btn:hover { border-color: var(--red); background: #fff5f5; }
+    .option-btn.selected { border-color: var(--red); background: #fff0ee; }
+    .option-btn .icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .option-btn .label { font-size: 14px; font-weight: 700; color: var(--dark); display: block; }
+    .option-btn .desc { font-size: 12px; color: var(--mid); margin-top: 4px; display: block; }
+
+    /* ── INPUT FIELDS ── */
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .field input, .field textarea, .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color .2s;
+      font-family: inherit;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      outline: none;
+      border-color: var(--red);
+    }
+    .field textarea { resize: vertical; min-height: 80px; }
+    .field .hint { font-size: 12px; color: var(--mid); margin-top: 4px; }
+
+    /* ── BUTTONS ── */
+    .btn-row { display: flex; gap: 10px; justify-content: space-between; align-items: center; }
+    .btn-back {
+      background: none;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-size: 15px;
+      cursor: pointer;
+      color: var(--mid);
+      font-weight: 600;
+      transition: .2s;
+    }
+    .btn-back:hover { border-color: var(--mid); color: var(--dark); }
+    .btn-next, .btn-submit {
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      flex: 1;
+      max-width: 280px;
+    }
+    .btn-next:hover, .btn-submit:hover { background: var(--red-dk); transform: translateY(-1px); }
+    .btn-next:disabled, .btn-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+    .error-msg {
+      color: var(--red);
+      font-size: 13px;
+      margin-top: -14px;
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    /* ── SUCCESS ── */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 48px 28px;
+    }
+    .success-screen .check {
+      width: 72px; height: 72px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+      color: white;
+    }
+    .success-screen h2 { font-size: 24px; margin-bottom: 10px; }
+    .success-screen p { color: var(--mid); font-size: 16px; max-width: 380px; margin: 0 auto 24px; }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: .2s;
+    }
+    .whatsapp-btn:hover { background: #1da851; }
+
+    /* ── FOOTER TRUST ── */
+    .trust-footer {
+      background: var(--dark);
+      color: #999;
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 13px;
+    }
+    .trust-footer strong { color: white; }
+
+    @media (max-width: 480px) {
+      .step { padding: 20px 18px 24px; }
+      .options { grid-template-columns: 1fr 1fr; }
+      .btn-next, .btn-submit { font-size: 15px; padding: 13px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <div class="logo-icon">🏠</div>
+    <div class="logo-text">
+      <strong>Neufeld Dachbau</strong>
+      <span>Euskirchen &amp; Umgebung</span>
+    </div>
+  </div>
+  <div class="header-badge">⭐ Kostenlos anfragen</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Ihr Dach in besten Händen –<br/><span>Jetzt kostenloses Angebot sichern</span></h1>
+  <p>In nur 2 Minuten Ihre Anfrage stellen. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+  <div class="trust-row">
+    <span><span class="dot">●</span> Über 20 Jahre Erfahrung</span>
+    <span><span class="dot">●</span> Regionaler Betrieb</span>
+    <span><span class="dot">●</span> Kostenlose Beratung</span>
+  </div>
+</div>
+
+<!-- CARD -->
+<div class="card-wrap">
+  <div class="card">
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progressBar" style="width: 16%"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Schritt 1 von 6</div>
+
+    <!-- ─── SCHRITT 1: Leistung ─── -->
+    <div class="step active" id="step1">
+      <h2>Was dürfen wir für Sie tun?</h2>
+      <p class="sub">Wählen Sie die passende Leistung aus.</p>
+      <div class="options">
+        <div class="option-btn" data-val="Neubau" onclick="selectOption(this,'s1')">
+          <span class="icon">🏗️</span>
+          <span class="label">Neubau</span>
+          <span class="desc">Neues Dach für einen Neubau</span>
+        </div>
+        <div class="option-btn" data-val="Sanierung" onclick="selectOption(this,'s1')">
+          <span class="icon">🔧</span>
+          <span class="label">Sanierung</span>
+          <span class="desc">Bestehendes Dach erneuern</span>
+        </div>
+        <div class="option-btn" data-val="Reparatur" onclick="selectOption(this,'s1')">
+          <span class="icon">🛠️</span>
+          <span class="label">Reparatur</span>
+          <span class="desc">Schäden beheben / Undichtigkeit</span>
+        </div>
+        <div class="option-btn" data-val="Velux-Fenster" onclick="selectOption(this,'s1')">
+          <span class="icon">🪟</span>
+          <span class="label">Velux-Fenster</span>
+          <span class="desc">Dachfenster einbauen / ersetzen</span>
+        </div>
+      </div>
+      <p class="error-msg" id="err1">Bitte wählen Sie eine Option aus.</p>
+      <div class="btn-row">
+        <div></div>
+        <button type="button" class="btn-next" onclick="nextStep(1)">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- ─── SCHRITT 2: Gebäudeart ─── -->
+    <div class="step" id="step2">
+      <h2>Um welches Gebäude handelt es sich?</h2>
+      <p class="sub">Damit wir das richtige Team einplanen können.</p>
+      <div class="options">
+        <div class="option-btn" data-val="Einfamilienhaus" onclick="selectOption(this,'s2')">
+          <span class="icon">🏡</span>
+          <span class="label">Einfamilienhaus</span>
+          <span class="desc">Privates Wohnhaus</span>
+        </div>
+        <div class="option-btn" data-val="Mehrfamilienhaus" onclick="selectOption(this,'s2')">
+          <span class="icon">🏢</span>
+          <span class="label">Mehrfamilienhaus</span>
+          <span class="desc">2 Wohnungen oder mehr</span>
+        </div>
+        <div class="option-btn" data-val="Gewerbeobjekt" onclick="selectOption(this,'s2')">
+          <span class="icon">🏭</span>
+          <span class="label">Gewerbeobjekt</span>
+          <span class="desc">Halle, Büro, Betrieb</span>
+        </div>
+        <div class="option-btn" data-val="Sonstiges" onclick="selectOption(this,'s2')">
+          <span class="icon">📋</span>
+          <span class="label">Sonstiges</span>
+          <span class="desc">Garage, Carport, etc.</span>
+        </div>
+      </div>
+      <p class="error-msg" id="err2">Bitte wählen Sie eine Option aus.</p>
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(2)">← Zurück</button>
+        <button type="button" class="btn-next" onclick="nextStep(2)">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- ─── SCHRITT 3: Dachfläche ─── -->
+    <div class="step" id="step3">
+      <h2>Wie groß ist die Dachfläche ungefähr?</h2>
+      <p class="sub">Eine Schätzung genügt – keine genaue Messung nötig.</p>
+      <div class="options">
+        <div class="option-btn" data-val="Unter 80 m²" onclick="selectOption(this,'s3')">
+          <span class="icon">🏠</span>
+          <span class="label">Unter 80 m²</span>
+          <span class="desc">Kleines Haus / Garage</span>
+        </div>
+        <div class="option-btn" data-val="80 – 150 m²" onclick="selectOption(this,'s3')">
+          <span class="icon">🏘️</span>
+          <span class="label">80 – 150 m²</span>
+          <span class="desc">Normales Einfamilienhaus</span>
+        </div>
+        <div class="option-btn" data-val="150 – 300 m²" onclick="selectOption(this,'s3')">
+          <span class="icon">🏗️</span>
+          <span class="label">150 – 300 m²</span>
+          <span class="desc">Größeres Haus / MFH</span>
+        </div>
+        <div class="option-btn" data-val="Über 300 m²" onclick="selectOption(this,'s3')">
+          <span class="icon">🏢</span>
+          <span class="label">Über 300 m²</span>
+          <span class="desc">Gewerbe / großes Objekt</span>
+        </div>
+      </div>
+      <p class="error-msg" id="err3">Bitte wählen Sie eine Option aus.</p>
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(3)">← Zurück</button>
+        <button type="button" class="btn-next" onclick="nextStep(3)">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- ─── SCHRITT 4: Zeitrahmen ─── -->
+    <div class="step" id="step4">
+      <h2>Wie dringend benötigen Sie uns?</h2>
+      <p class="sub">So können wir die Kapazitäten optimal einplanen.</p>
+      <div class="options" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+        <div class="option-btn" data-val="Sofort / Dringend" onclick="selectOption(this,'s4')">
+          <span class="icon">🚨</span>
+          <span class="label">Sofort / Dringend</span>
+          <span class="desc">Wasserschaden, Sturm o.ä.</span>
+        </div>
+        <div class="option-btn" data-val="Innerhalb 3 Monate" onclick="selectOption(this,'s4')">
+          <span class="icon">📅</span>
+          <span class="label">In 1–3 Monaten</span>
+          <span class="desc">Planung läuft bereits</span>
+        </div>
+        <div class="option-btn" data-val="Langfristig geplant" onclick="selectOption(this,'s4')">
+          <span class="icon">🗓️</span>
+          <span class="label">Langfristig</span>
+          <span class="desc">Erst in 6+ Monaten</span>
+        </div>
+      </div>
+      <p class="error-msg" id="err4">Bitte wählen Sie eine Option aus.</p>
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(4)">← Zurück</button>
+        <button type="button" class="btn-next" onclick="nextStep(4)">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- ─── SCHRITT 5: Standort ─── -->
+    <div class="step" id="step5">
+      <h2>Wo befindet sich das Objekt?</h2>
+      <p class="sub">Wir sind in Euskirchen und der gesamten Region aktiv.</p>
+      <div class="field">
+        <label for="plz">Postleitzahl *</label>
+        <input type="text" id="plz" placeholder="z.B. 53879" maxlength="5" inputmode="numeric" />
+      </div>
+      <div class="field">
+        <label for="ort">Ort</label>
+        <input type="text" id="ort" placeholder="z.B. Euskirchen" />
+      </div>
+      <p class="error-msg" id="err5">Bitte geben Sie Ihre Postleitzahl ein.</p>
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(5)">← Zurück</button>
+        <button type="button" class="btn-next" onclick="nextStep(5)">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- ─── SCHRITT 6: Kontakt ─── -->
+    <div class="step" id="step6">
+      <h2>Wie erreichen wir Sie?</h2>
+      <p class="sub">Ihre Daten werden nur für die Bearbeitung Ihrer Anfrage genutzt.</p>
+      <div class="field">
+        <label for="name">Name *</label>
+        <input type="text" id="name" placeholder="Vor- und Nachname" />
+      </div>
+      <div class="field">
+        <label for="telefon">Telefonnummer *</label>
+        <input type="tel" id="telefon" placeholder="+49 2251 …" />
+        <p class="hint">Wir rufen Sie innerhalb von 24h zurück.</p>
+      </div>
+      <div class="field">
+        <label for="email">E-Mail-Adresse *</label>
+        <input type="email" id="email" placeholder="ihre@email.de" />
+      </div>
+      <div class="field">
+        <label for="nachricht">Kurze Beschreibung (optional)</label>
+        <textarea id="nachricht" placeholder="Beschreiben Sie Ihr Anliegen kurz …"></textarea>
+      </div>
+      <p class="error-msg" id="err6">Bitte füllen Sie alle Pflichtfelder aus.</p>
+      <div class="btn-row">
+        <button type="button" class="btn-back" onclick="prevStep(6)">← Zurück</button>
+        <button type="button" class="btn-submit" id="submitBtn" onclick="submitForm()">✓ Kostenlos anfragen</button>
+      </div>
+      <p style="font-size:12px;color:#aaa;margin-top:14px;text-align:center;">
+        Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu. Keine Weitergabe an Dritte.
+      </p>
+    </div>
+
+    <!-- ─── ERFOLG ─── -->
+    <div class="success-screen" id="successScreen">
+      <div class="check">✓</div>
+      <h2>Anfrage erhalten!</h2>
+      <p>Vielen Dank! Wir melden uns innerhalb von <strong>24 Stunden</strong> bei Ihnen – oder Sie erreichen uns direkt per WhatsApp.</p>
+      <a class="whatsapp-btn" id="whatsappLink" href="#" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Direkt auf WhatsApp schreiben
+      </a>
+    </div>
+
+  </div><!-- /card -->
+</div><!-- /card-wrap -->
+
+<!-- FOOTER -->
+<div class="trust-footer">
+  <strong>Neufeld Dachbau</strong> · Euskirchen · Ihr zuverlässiger Dachdecker in der Region
+</div>
+
+<script>
+  // ── WhatsApp-Link mit Nummer befüllen
+  document.getElementById('whatsappLink').href = 'https://wa.me/' + WHATSAPP_NUMBER;
+
+  const TOTAL = 6;
+  let current = 1;
+  const selections = { s1: null, s2: null, s3: null, s4: null };
+
+  function selectOption(el, group) {
+    const step = group.replace('s', '');
+    document.querySelectorAll('#step' + step + ' .option-btn')
+      .forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    selections[group] = el.dataset.val;
+  }
+
+  function updateProgress(step) {
+    const pct = Math.round((step / TOTAL) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = 'Schritt ' + step + ' von ' + TOTAL;
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    updateProgress(n);
+    current = n;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function nextStep(from) {
+    if (from === 1 && !selections.s1) { showErr('err1'); return; }
+    if (from === 2 && !selections.s2) { showErr('err2'); return; }
+    if (from === 3 && !selections.s3) { showErr('err3'); return; }
+    if (from === 4 && !selections.s4) { showErr('err4'); return; }
+    if (from === 5) {
+      const plz = document.getElementById('plz').value.trim();
+      if (!plz || plz.length < 4) { showErr('err5'); return; }
+    }
+    hideErrs();
+    showStep(from + 1);
+  }
+
+  function prevStep(from) { hideErrs(); showStep(from - 1); }
+
+  function showErr(id) { hideErrs(); document.getElementById(id).style.display = 'block'; }
+  function hideErrs() { document.querySelectorAll('.error-msg').forEach(e => e.style.display = 'none'); }
+
+  async function submitForm() {
+    const name     = document.getElementById('name').value.trim();
+    const telefon  = document.getElementById('telefon').value.trim();
+    const email    = document.getElementById('email').value.trim();
+
+    if (!name || !telefon || !email) { showErr('err6'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Wird gesendet …';
+    btn.disabled = true;
+
+    const payload = {
+      leistung:    selections.s1,
+      gebaeude:    selections.s2,
+      dachflaeche: selections.s3,
+      zeitrahmen:  selections.s4,
+      plz:         document.getElementById('plz').value.trim(),
+      ort:         document.getElementById('ort').value.trim(),
+      name:        name,
+      telefon:     telefon,
+      email:       email,
+      nachricht:   document.getElementById('nachricht').value.trim()
+    };
+
+    try {
+      const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {
+          'apikey':        SUPABASE_ANON,
+          'Authorization': 'Bearer ' + SUPABASE_ANON,
+          'Content-Type':  'application/json',
+          'Prefer':        'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok || res.status === 201) {
+        document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+        document.getElementById('progressBar').style.width = '100%';
+        document.getElementById('progressLabel').textContent = 'Anfrage gesendet ✓';
+        document.getElementById('successScreen').style.display = 'block';
+      } else {
+        const err = await res.text();
+        console.error('Supabase Fehler:', err);
+        btn.textContent = '✓ Kostenlos anfragen';
+        btn.disabled = false;
+        alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.');
+      }
+    } catch (e) {
+      console.error(e);
+      btn.textContent = '✓ Kostenlos anfragen';
+      btn.disabled = false;
+      alert('Keine Verbindung. Bitte prüfen Sie Ihre Internetverbindung.');
+    }
+  }
+</script>
+</body>
+</html>
